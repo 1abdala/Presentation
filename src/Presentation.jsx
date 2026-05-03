@@ -16,7 +16,9 @@ export default function AroPresentation() {
         <BusinessModelValueSection key="business-value" />,
         <BusinessModelOperationsSection key="business-operations" />,
         <BusinessModelFinancialSection key="business-financial" />,
-        <MvpSection key="mvp" />
+        <MvpSection key="mvp" />,
+        <TeamSection key="team" />,
+        <ThankYouSection key="thankyou" />
     ];
 
     const paginate = useCallback((newDirection) => {
@@ -126,7 +128,8 @@ function Navbar({ currentSlide, goToSlide }) {
         { name: 'المشكلة', index: 1 },
         { name: 'الحل', index: 2 },
         { name: 'نموذج العمل', index: 3 }, // Business model covers indices 3, 4, 5, 6, 7
-        { name: 'MVP', index: 8 }
+        { name: 'MVP', index: 8 },
+        { name: 'الفريق', index: 9 }
     ];
 
     const handleNavClick = (index) => {
@@ -1241,8 +1244,60 @@ function MvpSection() {
         </section>
     );
 }
+function TeamSection() {
+    const team = [
+        { name: 'أحمد جامل', role: 'الإداري', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="8.5" cy="7" r="4" /><polyline points="17 11 19 13 23 9" /></svg> },
+        { name: 'فيصل الصلوي', role: 'Finance', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg> },
+        { name: 'عبدالله هاشم', role: 'مسوق', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M21 15l-5-5L5 21" /></svg> },
+        { name: 'عبدالرحمن الأثوري', role: 'مطور', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg> },
+        { name: 'حسام حربه', role: 'مصمم', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg> }
+    ];
 
+    return (
+        <section className="section team-section slide-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="container-full" style={{ width: '100%' }}>
+                <div className="section-header">
+                    <span className="section-tag">الفريق</span>
+                    <h2 className="section-title">فريقنا</h2>
+                    <p className="section-subtitle">العقول وراء ARO</p>
+                </div>
 
+                <div className="slide-content">
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center' }}>
+                        {team.map((member, i) => (
+                            <div key={i} className="problem-card-compact" style={{ width: '280px', flex: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2rem' }}>
+                                <div className="problem-card-icon" style={{ marginBottom: '1.5rem', width: '64px', height: '64px', padding: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                    {member.icon}
+                                </div>
+                                <div className="problem-card-content" style={{ width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', textAlign: 'center' }}>{member.name}</h4>
+                                    <p style={{ color: 'var(--text-secondary)', fontWeight: 600, margin: 0, textAlign: 'center' }}>{member.role}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function ThankYouSection() {
+    return (
+        <section className="section thankyou-section slide-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100%' }}>
+            <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="hero-content" style={{ maxWidth: '600px' }}>
+                    <h1 className="hero-title" style={{ fontSize: '4rem', marginBottom: '1rem', background: 'linear-gradient(to left, #6C5CE7, #00B894)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        شكراً لكم
+                    </h1>
+                    <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                        نتطلع إلى بناء مستقبل التعليم معاً.
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+}
 
 function Footer() {
     return (
