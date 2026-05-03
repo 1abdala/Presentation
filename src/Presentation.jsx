@@ -16,8 +16,7 @@ export default function AroPresentation() {
         <BusinessModelValueSection key="business-value" />,
         <BusinessModelOperationsSection key="business-operations" />,
         <BusinessModelFinancialSection key="business-financial" />,
-        <MvpSection key="mvp" />,
-        <ImpactSection key="impact" />
+        <MvpSection key="mvp" />
     ];
 
     const paginate = useCallback((newDirection) => {
@@ -127,8 +126,7 @@ function Navbar({ currentSlide, goToSlide }) {
         { name: 'المشكلة', index: 1 },
         { name: 'الحل', index: 2 },
         { name: 'نموذج العمل', index: 3 }, // Business model covers indices 3, 4, 5, 6, 7
-        { name: 'MVP', index: 8 },
-        { name: 'الاستعداد للاستثمار', index: 9 }
+        { name: 'MVP', index: 8 }
     ];
 
     const handleNavClick = (index) => {
@@ -903,8 +901,8 @@ function StackedBarChart() {
             label: 'المرحلة ٣',
             sub: '١٬٠٠٠–١٠٬٠٠٠ مستخدم',
             costs: 12326,
-            revenue: 36000,
-            profit: 23674,
+            revenue: 27000,
+            profit: 14674,
         },
     ];
 
@@ -912,7 +910,7 @@ function StackedBarChart() {
     const padL = 72, padR = 24, padT = 24, padB = 64;
     const chartW = W - padL - padR;
     const chartH = H - padT - padB;
-    const maxVal = 40000;
+    const maxVal = 30000;
 
     const groupW = chartW / stages.length;
     const barW = groupW * 0.38;
@@ -921,7 +919,7 @@ function StackedBarChart() {
     const toY = (v) => padT + chartH - (Math.max(v, 0) / maxVal) * chartH;
     const toH = (v) => (Math.max(v, 0) / maxVal) * chartH;
 
-    const yTicks = [0, 10000, 20000, 30000, 40000];
+    const yTicks = [0, 10000, 20000, 30000];
     const fmtRM = (v) => v >= 1000 ? `RM ${(v / 1000).toFixed(0)}k` : `RM ${v}`;
 
     // Colors
@@ -1244,104 +1242,7 @@ function MvpSection() {
     );
 }
 
-function ImpactSection() {
-    return (
-        <section className="section impact-section slide-content">
-            <div className="container">
-                <div className="section-header">
-                    <span className="section-tag">المعايير 7، 8، 9</span>
-                    <h2 className="section-title">الاستعداد للاستثمار</h2>
-                    <p className="section-subtitle">رحلتنا من الفكرة إلى الجاهزية للسوق</p>
-                </div>
 
-                <div className="impact-deployment-highlight">
-                    <div className="impact-deployment-badge">
-                        <span className="impact-pulse-dot"></span> متاح الآن
-                    </div>
-                    <h3>المرونة وتقبل التوجيه</h3>
-                    <p className="impact-deployment-intro">استجبنا بسرعة لملاحظات المرشدين وقمنا بتعديل استراتيجيتنا بناءً على أبحاث السوق والتغذية الراجعة من المستخدمين</p>
-
-                    <div className="impact-deployment-stats">
-                        <div className="impact-stat-box">
-                            <div className="impact-stat-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                    <polyline points="22 4 12 14.01 9 11.01" />
-                                </svg>
-                            </div>
-                            <div className="impact-stat-number">20+</div>
-                            <div className="impact-stat-label">مستخدم نشط</div>
-                            <div className="impact-stat-desc">داخل جامعتنا حالياً</div>
-                        </div>
-
-                        <div className="impact-stat-box">
-                            <div className="impact-stat-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-                                </svg>
-                            </div>
-                            <div className="impact-stat-number">100%</div>
-                            <div className="impact-stat-label">معدل النشر</div>
-                            <div className="impact-stat-desc">ARO مُفعّل ويعمل بكفاءة</div>
-                        </div>
-
-                        <div className="impact-stat-box">
-                            <div className="impact-stat-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                    <polyline points="14 2 14 8 20 8" />
-                                    <line x1="16" y1="13" x2="8" y2="13" />
-                                    <line x1="16" y1="17" x2="8" y2="17" />
-                                    <polyline points="10 9 9 9 8 9" />
-                                </svg>
-                            </div>
-                            <div className="impact-stat-number">تجريبي</div>
-                            <div className="impact-stat-label">مرحلة الاختبار</div>
-                            <div className="impact-stat-desc">جمع البيانات والملاحظات</div>
-                        </div>
-                    </div>
-
-                    <div className="impact-achievements-grid">
-                        <div className="impact-achievement-item">
-                            <span className="impact-achievement-icon">✓</span>
-                            <span className="impact-achievement-text">تحسين واجهة المستخدم بناءً على اختبارات الاستخدام</span>
-                        </div>
-                        <div className="impact-achievement-item">
-                            <span className="impact-achievement-icon">✓</span>
-                            <span className="impact-achievement-text">تعديل نموذج التسعير ليكون أكثر تنافسية</span>
-                        </div>
-                        <div className="impact-achievement-item">
-                            <span className="impact-achievement-icon">✓</span>
-                            <span className="impact-achievement-text">إضافة ميزات جديدة بناءً على احتياجات المستخدمين</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="impact-next-steps">
-                    <h3>الخطوات القادمة</h3>
-                    <div className="impact-steps-grid">
-                        <div className="impact-step-card">
-                            <div className="impact-step-number">01</div>
-                            <h4>توسيع النطاق الجامعي</h4>
-                            <p>زيادة عدد المستخدمين إلى 500 طالب داخل الجامعة</p>
-                        </div>
-                        <div className="impact-step-card">
-                            <div className="impact-step-number">02</div>
-                            <h4>شراكات استراتيجية</h4>
-                            <p>التعاون مع 3 جامعات محلية أخرى</p>
-                        </div>
-                        <div className="impact-step-card">
-                            <div className="impact-step-number">03</div>
-                            <h4>جولة استثمارية</h4>
-                            <p>البحث عن استثمار أولي لتسريع النمو</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
 
 function Footer() {
     return (
