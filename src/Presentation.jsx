@@ -923,7 +923,7 @@ function StackedBarChart() {
     const toH = (v) => (Math.max(v, 0) / maxVal) * chartH;
 
     const yTicks = [0, 10000, 20000, 30000];
-    const fmtRM = (v) => v >= 1000 ? `RM ${(v / 1000).toFixed(0)}k` : `RM ${v}`;
+    const fmtRM = (v) => v >= 1000 ? `RM ${v.toLocaleString()}` : `RM ${v}`;
 
     // Colors
     const C_COST = '#FF7675';    // red
@@ -1099,8 +1099,8 @@ function BusinessModelFinancialSection() {
                         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             {[
                                 { stage: 'المرحلة ١', users: '٢٠–١٠٠', cost: 'RM 77', rev: 'RM 0', net: '-RM 77', isLoss: true },
-                                { stage: 'المرحلة ٢', users: '١٠٠–١٬٠٠٠', cost: 'RM 1,154', rev: 'RM 2,475', net: '+RM 1,321', isLoss: false },
-                                { stage: 'المرحلة ٣', users: '١٬٠٠٠–١٠٬٠٠٠', cost: 'RM 12,326', rev: 'RM 24,750', net: '+RM 12,424', isLoss: false },
+                                { stage: 'المرحلة ٢', users: '١٠٠–١٬٠٠٠', cost: 'RM 1,154', rev: 'RM 2,700', net: '+RM 1,546', isLoss: false },
+                                { stage: 'المرحلة ٣', users: '١٬٠٠٠–١٠٬٠٠٠', cost: 'RM 12,326', rev: 'RM 27,000', net: '+RM 14,674', isLoss: false },
                             ].map((r) => (
                                 <div key={r.stage} style={{
                                     background: 'white',
