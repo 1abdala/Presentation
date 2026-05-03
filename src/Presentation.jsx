@@ -577,13 +577,12 @@ function BusinessModelMarketingSection() {
                                 <div className="card-item" style={{ marginBottom: 0 }}>
                                     <span className="item-icon">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                            <circle cx="12" cy="7" r="4" />
+                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                                         </svg>
                                     </span>
                                     <div className="item-content">
-                                        <h4>الاستراتيجية الأولى: أول 100 مستخدم مجاناً</h4>
-                                        <p>أول 100 مستخدم يحصلون على ARO مجاناً بالكامل لبناء قاعدة مستخدمين أولية وجمع تغذية راجعة قيمة. بعد 100 مستخدم، نقدم Free Trial لمدة أسبوعين لكل طالب جديد بدون أي التزام.</p>
+                                        <h4>الاستراتيجية الأولى: Freemium</h4>
+                                        <p>تقديم خطة مجانية بالكامل تجذب الطلاب لتجربة المنصة بدون مخاطر، مما يسرّع بناء قاعدة مستخدمين قوية ويسهل تحويلهم لاحقاً للخطة المدفوعة (Pro).</p>
                                     </div>
                                 </div>
                                 <div className="card-item" style={{ marginBottom: 0 }}>
@@ -645,56 +644,36 @@ function BusinessModelValueSection() {
                     <div className="canvas-cards-grid">
                         <div className="canvas-card-full highlight-card">
                             <div className="card-header-full">
-                                <h3>القيمة المقدمة</h3>
+                                <h3>Free plan</h3>
                             </div>
                             <div className="card-body-full" style={{ maxHeight: '100%', opacity: 1, visibility: 'visible' }}>
-                                <div className="card-item">
-                                    <span className="item-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                                        </svg>
-                                    </span>
-                                    <div className="item-content">
-                                        <h4>إعداد واحد يربط بجميع أنظمة LMS</h4>
-                                        <p>بدلاً من تسجيل الدخول يومياً لعدة منصات، يقوم الطالب بربط حسابه مرة واحدة فقط وARO يتولى البقية تلقائياً، موفراً ساعات من الوقت شهرياً.</p>
-                                    </div>
+                                <div className="pro-plan-header">
+                                    <div className="plan-badge" style={{ background: '#00B894' }}>الخطة المجانية</div>
+                                    <div className="plan-price">RM 0 / شهر</div>
+                                    <p className="plan-tagline">للطالب اللي يحتاج الأساسيات</p>
                                 </div>
-                                <div className="card-item">
-                                    <span className="item-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0" />
-                                        </svg>
-                                    </span>
-                                    <div className="item-content">
-                                        <h4>تذكيرات تلقائية عبر التطبيقات اليومية</h4>
-                                        <p>الإشعارات تصل مباشرة عبر واتساب وتيليجرام - التطبيقات التي يفتحها الطالب عشرات المرات يومياً، مما يضمن عدم تفويت أي موعد مهم.</p>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '1.5rem' }}>
+                                    <div className="card-item" style={{ marginBottom: 0 }}>
+                                        <span className="item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                            </svg>
+                                        </span>
+                                        <div className="item-content">
+                                            <h4>إعداد واحد يربط بجميع أنظمة LMS</h4>
+                                            <p>بدلاً من تسجيل الدخول يومياً لعدة منصات، يقوم الطالب بربط حسابه مرة واحدة فقط وARO يتولى البقية تلقائياً، موفراً ساعات من الوقت شهرياً.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="card-item">
-                                    <span className="item-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                            <polyline points="14 2 14 8 20 8" />
-                                            <line x1="16" y1="13" x2="8" y2="13" />
-                                            <line x1="16" y1="17" x2="8" y2="17" />
-                                        </svg>
-                                    </span>
-                                    <div className="item-content">
-                                        <h4>الجدول الدراسي الكامل متاح دائماً</h4>
-                                        <p>الوصول الفوري للجدول الدراسي الكامل: اليوم، الغد، الأسبوع - كل شيء في مكان واحد عبر أوامر WhatsApp البسيطة.</p>
-                                    </div>
-                                </div>
-                                <div className="card-item">
-                                    <span className="item-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                                            <line x1="12" y1="17" x2="12.01" y2="17" />
-                                        </svg>
-                                    </span>
-                                    <div className="item-content">
-                                        <h4>مساعد AI للإجابة على أسئلتك</h4>
-                                        <p>مساعد ذكاء اصطناعي متاح 24/7 للإجابة على أسئلة عن مواعيدك وجدولك، مما يوفر دعماً فورياً دون انتظار.</p>
+                                    <div className="card-item">
+                                        <span className="item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0" />
+                                            </svg>
+                                        </span>
+                                        <div className="item-content">
+                                            <h4>تذكيرات تلقائية عبر التطبيقات اليومية</h4>
+                                            <p>الإشعارات تصل مباشرة عبر واتساب وتيليجرام - التطبيقات التي يفتحها الطالب عشرات المرات يومياً، مما يضمن عدم تفويت أي موعد مهم.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -702,22 +681,42 @@ function BusinessModelValueSection() {
 
                         <div className="canvas-card-full">
                             <div className="card-header-full">
-                                <h3>خطة الاشتراك:</h3>
+                                <h3>Pro Plan</h3>
                             </div>
                             <div className="card-body-full" style={{ maxHeight: '100%', opacity: 1, visibility: 'visible' }}>
                                 <div className="pro-plan-header">
+                                    <div className="plan-badge">⭐ Pro</div>
                                     <div className="plan-price">RM 9 / شهر</div>
                                     <p className="plan-tagline">للطالب الجاد اللي يبغى كل شيء</p>
                                 </div>
-                                <div className="features-grid">
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>جميع المواعيد النهائية بدون حد</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>الجدول الدراسي الكامل: اليوم، الغد، الأسبوع</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>جميع أوامر WhatsApp: today, tomorrow, week, overdue, remind, myname</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>تنبيهات مخصصة: 24 ساعة + 3 ساعات + وقت تختاره أنت</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>مزامنة تلقائية كل 30 دقيقة بدون تدخل</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>مساعد AI للإجابة على أسئلة عن مواعيدك وجدولك</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>تخصيص ساعات الهدوء (عدم الإزعاج)</span></div>
-                                    <div className="feature-item"><span className="feature-check">✓</span><span>دعم بأولوية عبر WhatsApp</span></div>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '1.5rem' }}>
+                                    <div className="card-item" style={{ marginBottom: 0 }}>
+                                        <span className="item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                                <polyline points="14 2 14 8 20 8" />
+                                                <line x1="16" y1="13" x2="8" y2="13" />
+                                                <line x1="16" y1="17" x2="8" y2="17" />
+                                            </svg>
+                                        </span>
+                                        <div className="item-content">
+                                            <h4>الجدول الدراسي الكامل متاح دائماً</h4>
+                                            <p>الوصول الفوري للجدول الدراسي الكامل: اليوم، الغد، الأسبوع - كل شيء في مكان واحد عبر أوامر WhatsApp البسيطة.</p>
+                                        </div>
+                                    </div>
+                                    <div className="card-item" style={{ marginBottom: 0 }}>
+                                        <span className="item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                                            </svg>
+                                        </span>
+                                        <div className="item-content">
+                                            <h4>مساعد AI للإجابة على أسئلتك</h4>
+                                            <p>مساعد ذكاء اصطناعي متاح 24/7 للإجابة على أسئلة عن مواعيدك وجدولك، مما يوفر دعماً فورياً دون انتظار.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -897,15 +896,15 @@ function StackedBarChart() {
             label: 'المرحلة ٢',
             sub: '١٠٠–١٬٠٠٠ مستخدم',
             costs: 1154,
-            revenue: 2475,
-            profit: 1321,
+            revenue: 2700,
+            profit: 1546,
         },
         {
             label: 'المرحلة ٣',
             sub: '١٬٠٠٠–١٠٬٠٠٠ مستخدم',
             costs: 12326,
-            revenue: 24750,
-            profit: 12424,
+            revenue: 36000,
+            profit: 23674,
         },
     ];
 
@@ -913,7 +912,7 @@ function StackedBarChart() {
     const padL = 72, padR = 24, padT = 24, padB = 64;
     const chartW = W - padL - padR;
     const chartH = H - padT - padB;
-    const maxVal = 26000;
+    const maxVal = 40000;
 
     const groupW = chartW / stages.length;
     const barW = groupW * 0.38;
@@ -922,7 +921,7 @@ function StackedBarChart() {
     const toY = (v) => padT + chartH - (Math.max(v, 0) / maxVal) * chartH;
     const toH = (v) => (Math.max(v, 0) / maxVal) * chartH;
 
-    const yTicks = [0, 5000, 10000, 15000, 20000, 25000];
+    const yTicks = [0, 10000, 20000, 30000, 40000];
     const fmtRM = (v) => v >= 1000 ? `RM ${(v / 1000).toFixed(0)}k` : `RM ${v}`;
 
     // Colors
@@ -1142,10 +1141,11 @@ function BusinessModelFinancialSection() {
 }
 
 // Reusable browser-frame component
-function BrowserFrame({ src, url }) {
+function BrowserFrame({ src, url, aspectRatio }) {
     return (
         <div style={{
             flex: 1,
+            aspectRatio: aspectRatio,
             minHeight: 0,
             borderRadius: '14px',
             overflow: 'hidden',
