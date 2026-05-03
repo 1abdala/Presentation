@@ -112,16 +112,6 @@ export default function AroPresentation() {
                 </AnimatePresence>
             </div>
 
-            {/* Presentation Controls overlay */}
-            <div className="presentation-controls">
-                <button onClick={() => paginate(-1)} disabled={currentSlide === 0} className="ctrl-btn">
-                    السابق
-                </button>
-                <span className="slide-counter">{currentSlide + 1} / {slides.length}</span>
-                <button onClick={() => paginate(1)} disabled={currentSlide === slides.length - 1} className="ctrl-btn">
-                    التالي
-                </button>
-            </div>
         </div>
     );
 }
@@ -208,8 +198,8 @@ function HeroSection({ goToSlide }) {
 
 function ProblemSection() {
     return (
-        <section className="section problem-section slide-content">
-            <div className="container">
+        <section className="section problem-section slide-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '100vh', boxSizing: 'border-box' }}>
+            <div className="container" style={{ width: '100%' }}>
                 <div className="section-header">
                     <span className="section-tag">المعيار الأول</span>
                     <h2 className="section-title">المشكلة</h2>
@@ -225,7 +215,14 @@ function ProblemSection() {
 
                     <div className="problem-cards">
                         <div className="problem-card-compact">
-                            <div className="problem-card-icon"></div>
+                            <div className="problem-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                                </svg>
+                            </div>
                             <div className="problem-card-content">
                                 <h4>التصفح المتعدد</h4>
                                 <p>أنظمة إدارة التعلم تُجبر الطالب على تصفّح صفحات متعددة لمعرفة ما عليه من مهام</p>
@@ -233,7 +230,15 @@ function ProblemSection() {
                         </div>
 
                         <div className="problem-card-compact">
-                            <div className="problem-card-icon"></div>
+                            <div className="problem-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                                    <path d="M18.63 13A17.89 17.89 0 0 1 18 8" />
+                                    <path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14" />
+                                    <path d="M18 8a6 6 0 0 0-9.33-5" />
+                                    <line x1="1" y1="1" x2="23" y2="23" />
+                                </svg>
+                            </div>
                             <div className="problem-card-content">
                                 <h4>غياب التنبيهات الفعّالة</h4>
                                 <p>الأنظمة الحالية لا توفّر تنبيهات فعّالة، مما يجعل من السهل تفويت المواعيد النهائية</p>
@@ -241,7 +246,15 @@ function ProblemSection() {
                         </div>
 
                         <div className="problem-card-compact">
-                            <div className="problem-card-icon"></div>
+                            <div className="problem-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                    <line x1="12" y1="2" x2="12" y2="4" />
+                                    <line x1="12" y1="20" x2="12" y2="22" />
+                                    <path d="M21 12c0-4.97-4.03-9-9-9" stroke="#FF7675" />
+                                </svg>
+                            </div>
                             <div className="problem-card-content">
                                 <h4>تحديثات اللحظة الأخيرة</h4>
                                 <p>التسليمات التي تُضاف في اللحظة الأخيرة يسهل تفويتها بسبب نقص الإشعارات المباشرة</p>
@@ -268,7 +281,7 @@ function SolutionSection() {
                     <div className="solution-card">
                         <div className="solution-card-header">
                             <div className="solution-icon"></div>
-                            <h3>سحب تلقائي من LMS</h3>
+                            <h3>سحب تلقائي من جميع البرامج</h3>
                         </div>
                         <p>ARO يسحب جميع المواعيد النهائية والجداول الدراسية تلقائياً من نظام إدارة التعلم</p>
                         <ul className="feature-list">
@@ -365,7 +378,7 @@ function GrowthChart() {
                     marginBottom: '0.25rem',
                 }}>مسار النمو 📈</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                    عدد المستخدمين المتوقع خلال 6 أشهر
+                    عدد المستخدمين المتوقع خلال 8 أشهر
                 </p>
             </div>
 
@@ -528,8 +541,8 @@ function BusinessModelCustomersSection() {
                                             </svg>
                                         </span>
                                         <div className="item-content">
-                                            <h4>التوسع الجغرافي: ولاية مالاكا</h4>
-                                            <p>بعد نجاح التوسع في UTeM، نخطط للانتشار في جامعات أخرى داخل ولاية مالاكا.</p>
+                                            <h4>التوسع الجغرافي: بقية ماليزيا</h4>
+                                            <p>بعد نجاح التوسع في UTeM، نخطط للانتشار في جامعات أخرى داخل ماليزيا.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -604,8 +617,8 @@ function BusinessModelMarketingSection() {
                                         </svg>
                                     </span>
                                     <div className="item-content">
-                                        <h4>الاستراتيجية الرابعة: مجموعات تيليجرام</h4>
-                                        <p>نستهدف مجموعات تيليجرام الأكاديمية المتخصصة التي يتشارك فيها الطلاب المواد والملاحظات، ونوصل ARO لمن يحتاجه فعلاً بشكل عضوي.</p>
+                                        <h4>الاستراتيجية الرابعة: الأنديه الطلابيه</h4>
+                                        <p>نستهدف الأنديه الطلابيه الأكاديمية المتخصصة التي يتشارك فيها الطلاب المواد والملاحظات، ونوصل ARO لمن يحتاجه فعلاً بشكل عضوي.</p>
                                     </div>
                                 </div>
                             </div>
@@ -689,11 +702,10 @@ function BusinessModelValueSection() {
 
                         <div className="canvas-card-full">
                             <div className="card-header-full">
-                                <h3>خطة الاشتراك: Pro</h3>
+                                <h3>خطة الاشتراك:</h3>
                             </div>
                             <div className="card-body-full" style={{ maxHeight: '100%', opacity: 1, visibility: 'visible' }}>
                                 <div className="pro-plan-header">
-                                    <div className="plan-badge">⭐ Pro</div>
                                     <div className="plan-price">RM 9 / شهر</div>
                                     <p className="plan-tagline">للطالب الجاد اللي يبغى كل شيء</p>
                                 </div>
@@ -915,7 +927,7 @@ function StackedBarChart() {
 
     // Colors
     const C_COST = '#FF7675';    // red
-    const C_REV  = '#00B894';    // green
+    const C_REV = '#00B894';    // green
     const C_PROF = '#6C5CE7';    // purple
 
     return (
@@ -1052,7 +1064,7 @@ function StackedBarChart() {
             <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginTop: '0.5rem', flexWrap: 'wrap' }}>
                 {[
                     { color: C_COST, label: 'التكاليف' },
-                    { color: C_REV,  label: 'الإيرادات' },
+                    { color: C_REV, label: 'الإيرادات' },
                     { color: C_PROF, label: 'صافي الربح' },
                 ].map(({ color, label }) => (
                     <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -1129,52 +1141,103 @@ function BusinessModelFinancialSection() {
     );
 }
 
+// Reusable browser-frame component
+function BrowserFrame({ src, url }) {
+    return (
+        <div style={{
+            flex: 1,
+            minHeight: 0,
+            borderRadius: '14px',
+            overflow: 'hidden',
+            boxShadow: '0 16px 48px rgba(0,0,0,0.15), 0 4px 16px rgba(108,92,231,0.12)',
+            border: '1px solid rgba(108,92,231,0.15)',
+            background: 'white',
+            display: 'flex',
+            flexDirection: 'column',
+        }}>
+            {/* Top bar */}
+            <div style={{
+                background: '#F1F3F5',
+                padding: '0.45rem 0.9rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.65rem',
+                borderBottom: '1px solid #E0E0E0',
+                flexShrink: 0,
+            }}>
+                <div style={{ display: 'flex', gap: '5px', flexShrink: 0 }}>
+                    <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FF5F57' }} />
+                    <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FEBC2E' }} />
+                    <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#28C840' }} />
+                </div>
+                <div style={{
+                    flex: 1, background: 'white', borderRadius: '5px',
+                    padding: '0.18rem 0.6rem', fontSize: '0.72rem', color: '#6B7280',
+                    border: '1px solid #E0E0E0', fontFamily: 'monospace',
+                    display: 'flex', alignItems: 'center', gap: '0.35rem',
+                }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B894" strokeWidth="2.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    {url}
+                </div>
+            </div>
+            {/* Content */}
+            {src ? (
+                <img src={src} alt="Demo" style={{
+                    flex: 1, minHeight: 0, width: '100%',
+                    objectFit: 'contain', objectPosition: 'top center', display: 'block',
+                }} />
+            ) : (
+                <div style={{
+                    flex: 1, display: 'flex', flexDirection: 'column',
+                    alignItems: 'center', justifyContent: 'center',
+                    background: 'rgba(108,92,231,0.03)',
+                    color: 'rgba(108,92,231,0.4)',
+                    gap: '0.75rem',
+                }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+                        style={{ width: 48, height: 48, opacity: 0.5 }}>
+                        <rect x="3" y="3" width="18" height="18" rx="3" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>اسحب الصورة هنا</span>
+                </div>
+            )}
+        </div>
+    );
+}
+
 function MvpSection() {
     return (
-        <section className="section mvp-section slide-content">
-            <div className="container">
-                <div className="section-header">
+        <section className="section mvp-section slide-content" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '1.25rem 2rem',
+            height: '100%',
+            boxSizing: 'border-box',
+            overflow: 'hidden',
+        }}>
+            <div style={{ width: '100%', maxWidth: '1000px', display: 'flex', flexDirection: 'column', height: '100%', maxHeight: '880px' }}>
+                {/* Header */}
+                <div className="section-header" style={{ marginBottom: '1rem', flexShrink: 0 }}>
                     <span className="section-tag">المعيار الرابع</span>
                     <h2 className="section-title">النموذج الأولي</h2>
                     <p className="section-subtitle">MVP قابل للاختبار والتفاعل</p>
                 </div>
 
-                <div className="mvp-showcase">
-                    <div className="mvp-features">
-                        <h3>الوظائف الأساسية المطبقة</h3>
-                        <div className="feature-grid">
-                            <div className="feature-box"><div className="feature-icon"></div><div className="feature-name">لوحة التحكم التفاعلية</div></div>
-                            <div className="feature-box"><div className="feature-icon"></div><div className="feature-name">نظام تتبع التقدم</div></div>
-                            <div className="feature-box"><div className="feature-icon"></div><div className="feature-name">توصيات مخصصة</div></div>
-                            <div className="feature-box"><div className="feature-icon"></div><div className="feature-name">واجهة مستخدم عصرية</div></div>
-                            <div className="feature-box"><div className="feature-icon"></div><div className="feature-name">نظام إشعارات</div></div>
-                            <div className="feature-box"><div className="feature-icon"></div><div className="feature-name">تكامل مع الأدوات</div></div>
-                        </div>
-                    </div>
+                {/* Two frames side by side */}
+                <div style={{ display: 'flex', gap: '1.5rem', flex: 1, minHeight: 0 }}>
 
-                    <div className="mvp-demo">
-                        <div className="demo-placeholder">
-                            <div className="demo-screen">
-                                <div className="screen-header">
-                                    <div className="screen-dots"><span></span><span></span><span></span></div>
-                                </div>
-                                <div className="screen-content">
-                                    <div className="demo-text">النموذج التفاعلي</div>
-                                    <div className="demo-subtitle">تجربة مباشرة للمنصة</div>
-                                    <button className="demo-btn">اضغط للتجربة</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {/* Frame 1 — demo.jpeg */}
+                    <BrowserFrame src="/demo.jpeg" url="aro-app.vercel.app" />
 
-                <div className="testing-results">
-                    <h3>نتائج الاختبار الأولي</h3>
-                    <div className="results-grid">
-                        <div className="result-card"><div className="result-number">95%</div><div className="result-label">رضا المستخدمين</div></div>
-                        <div className="result-card"><div className="result-number">120+</div><div className="result-label">مستخدم تجريبي</div></div>
-                        <div className="result-card"><div className="result-number">4.8/5</div><div className="result-label">التقييم العام</div></div>
-                    </div>
+                    {/* Frame 2 — demo2.jpeg */}
+                    <BrowserFrame src="/demo2.jpeg" url="aro-app.vercel.app" />
+
                 </div>
             </div>
         </section>
